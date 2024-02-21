@@ -1,0 +1,11 @@
+
+
+<div class="color"></div>
+<div class="inputs">
+    <input type="range" min="0" max="255" [ngModel]="extractColor('r')" 
+                                (ngModelChange)="updateColor('r', $event)"/>
+    <input type="range" min="0" max="255" [ngModel]="extractColor('g')" 
+                                (ngModelChange)="updateColor('g', $event)"/>
+    <input type="range" min="0" max="255" [ngModel]="extractColor('b')" 
+                                (ngModelChange)="updateColor('b', $event)"/>
+</div>

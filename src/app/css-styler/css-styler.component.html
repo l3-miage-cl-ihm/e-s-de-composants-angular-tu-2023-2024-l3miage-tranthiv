@@ -1,0 +1,27 @@
+<pre>backgroundColor: <input    type="color"
+                                [ngModel]="cssStyle.backgroundColor"
+                                (ngModelChange)="update({backgroundColor: $event})"
+                                />
+    
+        <app-color-selector *ngIf="sigEtape"
+                [color]="cssStyle.backgroundColor"
+                (colorChange)="update({backgroundColor: $event})">
+        </app-color-selector>
+        borderColor: <input type="color"  
+                        [ngModel]="cssStyle.borderColor"
+                        (ngModelChange)="update({borderColor: $event})"/>
+
+    
+        <app-color-selector *ngIf="sigEtape"
+            [color]="cssStyle.borderColor"
+            (colorChange)="update({borderColor: $event})">
+        </app-color-selector>
+        borderRadius: <input type="number" 
+                        [ngModel]="borderRadius"
+                        (ngModelChange)="updateRadius($event, borderUnit)"
+                        /> 
+   <select [ngModel]="borderUnit" (ngModelChange)="updateRadius(borderRadius, $event)">
+        <option value="px">px</option>
+        <option value="%">%</option>   
+    </select>          
+</pre>

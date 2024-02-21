@@ -1,7 +1,35 @@
-<h1>TP Entrées et sorties de composants</h1>
-<pre>
-<div class="stylée" [style] = "style()">
-</div>
-{{style() | json}}
-</pre>
 
+<h1>TP Entrées et sorties de composants</h1>
+<button (click)="upDateButtonMode1()">Étape1</button>
+<button (click)="upDateButtonMode2()">Étape2</button>
+<button (click)="upDateButtonMode3()">Étape3</button>
+
+<div *ngIf="etaps==='1'" > 
+    <h1>Étape1</h1>
+    <pre>
+    <div class="stylée" [style] = "style()">
+    </div>
+    {{style() | json}}
+    </pre>
+</div>
+
+
+<div *ngIf="etaps==='2'" >
+    <h1>Étape2</h1>
+    <pre>
+    <app-css-styler [sigEtape]="false" [cssStyle]="sigRacine()" (cssStyleChange)="updateCssStyle($event)" ></app-css-styler>
+    <div class="stylée" [style]="sigRacine()"></div>
+    </pre>
+</div>
+
+
+<div *ngIf="etaps==='3'" >
+<h1>Étape3</h1>
+<pre>
+    <app-css-styler [cssStyle]="sigRacine()" (cssStyleChange)="updateCssStyle($event)"
+        [sigEtape]="true"></app-css-styler>
+    
+    <div class="stylée" [style]="sigRacine()"></div>
+</pre>
+<!--<button (click)="essaiChange()">Changer le style...</button>-->
+</div>

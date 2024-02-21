@@ -1,0 +1,36 @@
+
+    table {
+   border-collapse: collapse;
+ }
+ td {
+   border: 1px solid black;
+   width: 30px;
+   height: 30px;
+   text-align: center;
+ }
+ td.top {
+   border-top: 2px solid black;
+ }
+ td.bottom {
+   border-bottom: 2px solid black;
+ }
+ td.left {
+   border-left: 2px solid black;
+ }
+ td.right {
+   border-right: 2px solid black;
+ }
+ td.selected {
+   background-color: lightgray;
+ }
+ td.selected:hover {
+   background-color: gray;
+ }
+ td.selected:active {
+   background-color: darkgray;
+ }
+ td span {
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+ }
